@@ -60,6 +60,191 @@
         "type": "JSON",
         "header": "GTIN",
         "path": "gtin"
+      },
+      {
+        "type": "JSON",
+        "header": "Item Group ID",
+        "path": "itemGroupId"
+      },
+      {
+        "type": "JSON",
+        "header": "Link",
+        "path": "link"
+      },
+      {
+        "type": "JSON",
+        "header": "Brand",
+        "path": "brand"
+      },
+      {
+        "type": "JSON",
+        "header": "MPN",
+        "path": "mpn"
+      },
+      {
+        "type": "JSON",
+        "header": "Availability Date",
+        "path": "availabilityDate"
+      },
+      {
+        "type": "JSON",
+        "header": "Condition",
+        "path": "condition"
+      },
+      {
+        "type": "JSON",
+        "header": "Adult Content",
+        "path": "adult"
+      },
+      {
+        "type": "JSON",
+        "header": "Product Highlights",
+        "path": "productHighlights"
+      },
+      {
+        "type": "JSON",
+        "header": "Expiration Date",
+        "path": "expirationDate"
+      },
+      {
+        "type": "JSON",
+        "header": "Unit Pricing Measure (Value)",
+        "path": "unitPricingMeasure.value"
+      },
+      {
+        "type": "JSON",
+        "header": "Unit Pricing Base Measure (Value)",
+        "path": "unitPricingBaseMeasure.value"
+      },
+      {
+        "type": "JSON",
+        "header": "Bundle",
+        "path": "isBundle"
+      },
+      {
+        "type": "JSON",
+        "header": "Product Subscription Cost (Period)",
+        "path": "subscriptionCost.period"
+      },
+      {
+        "type": "JSON",
+        "header": "Unit Pricing Measure (Unit)",
+        "path": "unitPricingMeasure.unit"
+      },
+      {
+        "type": "JSON",
+        "header": "Unit Pricing Base Measure (Unit)",
+        "path": "unitPricingBaseMeasure.unit"
+      },
+      {
+        "type": "JSON",
+        "header": "Loyalty Points (Name)",
+        "path": "loyaltyPoints.name"
+      },
+      {
+        "type": "JSON",
+        "header": "Loyalty Points (Value)",
+        "path": "loyaltyPoints.pointsValue"
+      },
+      {
+        "type": "JSON",
+        "header": "Loyalty Points (Ratio)",
+        "path": "loyaltyPoints.ratio"
+      },
+      {
+        "type": "JSON",
+        "header": "Shipping Weight (Value)",
+        "path": "shippingWeight.value"
+      },
+      {
+        "type": "JSON",
+        "header": "Shipping Weight (Unit)",
+        "path": "shippingWeight.unit"
+      },
+      {
+        "type": "JSON",
+        "header": "Cost of Goods Sold (Value)",
+        "path": "costOfGoodsSold.value"
+      },
+      {
+        "type": "JSON",
+        "header": "Cost of Goods Sold (Currency)",
+        "path": "costOfGoodsSold.currency"
+      },
+      {
+        "type": "JSON",
+        "header": "Shipping Length (Value)",
+        "path": "shippingLength.value"
+      },
+      {
+        "type": "JSON",
+        "header": "Shipping Length (Unit)",
+        "path": "shippingLength.unit"
+      },
+      {
+        "type": "JSON",
+        "header": "Shipping Width (Value)",
+        "path": "shippingWidth.value"
+      },
+      {
+        "type": "JSON",
+        "header": "Shipping Width (Unit)",
+        "path": "shippingWidth.unit"
+      },
+      {
+        "type": "JSON",
+        "header": "Shipping Height (Value)",
+        "path": "shippingHeight.value"
+      },
+      {
+        "type": "JSON",
+        "header": "Shipping Height (Unit)",
+        "path": "shippingHeight.unit"
+      },
+      {
+        "type": "JSON",
+        "header": "Mobile Link",
+        "path": "mobileLink"
+      },
+      {
+        "type": "JSON",
+        "header": "Size Type",
+        "path": "sizeType"
+      },
+      {
+        "type": "JSON",
+        "header": "Size System",
+        "path": "sizeSystem"
+      },
+      {
+        "type": "JSON",
+        "header": "Image Link",
+        "path": "imageLink"
+      },
+      {
+        "type": "JSON",
+        "header": "Additional Image Links",
+        "path": "additionalImageLinks[*]"
+      },
+      {
+        "type": "JSON",
+        "header": "Energy Efficiency Class",
+        "path": "energyEfficiencyClass"
+      },
+      {
+        "type": "JSON",
+        "header": "Minimum Energy Efficiency Class",
+        "path": "minEnergyEfficiencyClass"
+      },
+      {
+        "type": "JSON",
+        "header": "Maximum Energy Efficiency Class",
+        "path": "maxEnergyEfficiencyClass"
+      },
+      {
+        "type": "JSON",
+        "header": "Multipack",
+        "path": "multipack"
       }
     ]
   },
@@ -78,8 +263,8 @@
   ],
   "mappings": [
     {
-      "field": "stockStatus",
-      "header": "Availability",
+      "field": "expirationDate",
+      "header": "Expiration Date",
       "subfieldPath": []
     },
     {
@@ -97,9 +282,60 @@
       ]
     },
     {
-      "field": "gtin",
-      "header": "GTIN",
+      "field": "unitPricingMeasure",
+      "header": "Unit Pricing Measure (Value)",
+      "subfieldPath": [
+        {
+          "name": "value"
+        }
+      ]
+    },
+    {
+      "field": "mpn",
+      "header": "MPN",
       "subfieldPath": []
+    },
+    {
+      "field": "shippingWeight",
+      "header": "Shipping Weight (Value)",
+      "subfieldPath": [
+        {
+          "name": "value"
+        }
+      ]
+    },
+    {
+      "field": "maximumEnergyEfficiencyClass",
+      "header": "Maximum Energy Efficiency Class",
+      "subfieldPath": []
+    },
+    {
+      "field": "name",
+      "header": "Name",
+      "subfieldPath": []
+    },
+    {
+      "field": "includesAdultContent",
+      "header": "Adult Content",
+      "subfieldPath": []
+    },
+    {
+      "field": "unitPricingBaseMeasure",
+      "header": "Unit Pricing Base Measure (Value)",
+      "subfieldPath": [
+        {
+          "name": "value"
+        }
+      ]
+    },
+    {
+      "field": "productionCost",
+      "header": "Cost of Goods Sold (Value)",
+      "subfieldPath": [
+        {
+          "name": "value"
+        }
+      ]
     },
     {
       "field": "entityId",
@@ -107,8 +343,56 @@
       "subfieldPath": []
     },
     {
-      "field": "sku",
-      "header": "Offer ID",
+      "field": "shippingLength",
+      "header": "Shipping Length (Value)",
+      "subfieldPath": [
+        {
+          "name": "value"
+        }
+      ]
+    },
+    {
+      "field": "primaryPhoto",
+      "header": "Image Link",
+      "subfieldPath": [
+        {
+          "name": "image"
+        },
+        {
+          "name": "url"
+        }
+      ]
+    },
+    {
+      "field": "loyaltyPoints",
+      "header": "Loyalty Points (Value)",
+      "subfieldPath": [
+        {
+          "name": "numberOfPoints"
+        }
+      ]
+    },
+    {
+      "field": "shippingWidth",
+      "header": "Shipping Width (Value)",
+      "subfieldPath": [
+        {
+          "name": "value"
+        }
+      ]
+    },
+    {
+      "field": "shippingWeight",
+      "header": "Shipping Weight (Unit)",
+      "subfieldPath": [
+        {
+          "name": "unit"
+        }
+      ]
+    },
+    {
+      "field": "minimumEnergyEfficiencyClass",
+      "header": "Minimum Energy Efficiency Class",
       "subfieldPath": []
     },
     {
@@ -117,8 +401,175 @@
       "subfieldPath": []
     },
     {
-      "field": "name",
-      "header": "Name",
+      "field": "unitPricingBaseMeasure",
+      "header": "Unit Pricing Base Measure (Unit)",
+      "subfieldPath": [
+        {
+          "name": "unit"
+        }
+      ]
+    },
+    {
+      "field": "stockStatus",
+      "header": "Availability",
+      "subfieldPath": []
+    },
+    {
+      "field": "condition",
+      "header": "Condition",
+      "subfieldPath": []
+    },
+    {
+      "field": "energyEfficiencyClass",
+      "header": "Energy Efficiency Class",
+      "subfieldPath": []
+    },
+    {
+      "field": "bundle",
+      "header": "Bundle",
+      "subfieldPath": []
+    },
+    {
+      "field": "shippingHeight",
+      "header": "Shipping Height (Unit)",
+      "subfieldPath": [
+        {
+          "name": "unit"
+        }
+      ]
+    },
+    {
+      "field": "subscriptionPlan",
+      "header": "Product Subscription Cost (Period)",
+      "subfieldPath": [
+        {
+          "name": "period"
+        }
+      ]
+    },
+    {
+      "field": "shippingLength",
+      "header": "Shipping Length (Unit)",
+      "subfieldPath": [
+        {
+          "name": "unit"
+        }
+      ]
+    },
+    {
+      "field": "mobileOptimizedLandingPage",
+      "header": "Mobile Link",
+      "subfieldPath": []
+    },
+    {
+      "field": "unitPricingMeasure",
+      "header": "Unit Pricing Measure (Unit)",
+      "subfieldPath": [
+        {
+          "name": "unit"
+        }
+      ]
+    },
+    {
+      "field": "loyaltyPoints",
+      "header": "Loyalty Points (Name)",
+      "subfieldPath": [
+        {
+          "name": "loyaltyProgramName"
+        }
+      ]
+    },
+    {
+      "field": "sizeSystem",
+      "header": "Size System",
+      "subfieldPath": []
+    },
+    {
+      "field": "photoGallery",
+      "header": "Additional Image Links",
+      "subfieldPath": [
+        {
+          "name": "image"
+        },
+        {
+          "name": "url"
+        }
+      ]
+    },
+    {
+      "field": "brand",
+      "header": "Brand",
+      "subfieldPath": []
+    },
+    {
+      "field": "productionCost",
+      "header": "Cost of Goods Sold (Currency)",
+      "subfieldPath": [
+        {
+          "name": "currencyCode"
+        }
+      ]
+    },
+    {
+      "field": "shippingWidth",
+      "header": "Shipping Width (Unit)",
+      "subfieldPath": [
+        {
+          "name": "unit"
+        }
+      ]
+    },
+    {
+      "field": "sizeType",
+      "header": "Size Type",
+      "subfieldPath": []
+    },
+    {
+      "field": "gtin",
+      "header": "GTIN",
+      "subfieldPath": []
+    },
+    {
+      "field": "sku",
+      "header": "Offer ID",
+      "subfieldPath": []
+    },
+    {
+      "field": "availabilityDate",
+      "header": "Availability Date",
+      "subfieldPath": []
+    },
+    {
+      "field": "loyaltyPoints",
+      "header": "Loyalty Points (Ratio)",
+      "subfieldPath": [
+        {
+          "name": "ratioToCurrency"
+        }
+      ]
+    },
+    {
+      "field": "parentProduct",
+      "header": "Item Group ID",
+      "subfieldPath": []
+    },
+    {
+      "field": "shippingHeight",
+      "header": "Shipping Height (Value)",
+      "subfieldPath": [
+        {
+          "name": "value"
+        }
+      ]
+    },
+    {
+      "field": "productHighlights",
+      "header": "Product Highlights",
+      "subfieldPath": []
+    },
+    {
+      "field": "landingPageUrl",
+      "header": "Link",
       "subfieldPath": []
     },
     {
@@ -129,6 +580,11 @@
           "name": "currencyCode"
         }
       ]
+    },
+    {
+      "field": "numberOfItemsInPack",
+      "header": "Multipack",
+      "subfieldPath": []
     }
   ],
   "scheduleConfig": {
