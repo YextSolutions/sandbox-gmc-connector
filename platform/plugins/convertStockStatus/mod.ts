@@ -7,6 +7,6 @@ export function convertStockStatus(availability: string) {
 		case 'preorder':
 			return "PRE_ORDER"
 		default: 
-			throw new TypeError('Invalid availability type.');
+			return null;
 	}
 }
