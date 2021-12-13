@@ -490,6 +490,26 @@
         "type": "JSON",
         "header": "Pattern",
         "path": "pattern"
+      },
+      {
+        "type": "JSON",
+        "header": "Installment Plan (Number of Periods)",
+        "path": "installment.months"
+      },
+      {
+        "type": "JSON",
+        "header": "Installment Plan (Period Length)",
+        "path": "installment.months"
+      },
+      {
+        "type": "JSON",
+        "header": "Installment Plan (Value)",
+        "path": "installment.amount.value"
+      },
+      {
+        "type": "JSON",
+        "header": "Installment Plan (Currency)",
+        "path": "installment.amount.currency"
       }
     ]
   },
@@ -527,6 +547,35 @@
         ],
         "newColumnHeader": "Custom Labels",
         "delimiter": ","
+      }
+    },
+    {
+      "function": {
+        "inputHeaders": {
+          "headers": [
+            "Installment Plan (Period Length)"
+          ]
+        },
+        "plugin": "gmcconnector_determineInstallmentPlanLength",
+        "function": "determineInstallmentPlanLength"
+      }
+    },
+    {
+      "findAndReplace": {
+        "inputHeaders": {
+          "headers": [
+            "Energy Efficiency Class",
+            "Minimum Energy Efficiency Class",
+            "Maximum Energy Efficiency Class"
+          ]
+        },
+        "valueToFind": {
+          "plainText": {
+            "value": "+",
+            "ignoreCase": false
+          }
+        },
+        "replacement": "_PLUS"
       }
     }
   ],
@@ -588,6 +637,15 @@
       "subfieldPath": []
     },
     {
+      "field": "installmentPlan",
+      "header": "Installment Plan (Number of Periods)",
+      "subfieldPath": [
+        {
+          "name": "numberOfPeriods"
+        }
+      ]
+    },
+    {
       "field": "includesAdultContent",
       "header": "Adult Content",
       "subfieldPath": []
@@ -645,6 +703,18 @@
       "field": "gmc_shippingLabel",
       "header": "Shipping Label",
       "subfieldPath": []
+    },
+    {
+      "field": "installmentPlan",
+      "header": "Installment Plan (Currency)",
+      "subfieldPath": [
+        {
+          "name": "price"
+        },
+        {
+          "name": "currencyCode"
+        }
+      ]
     },
     {
       "field": "shippingWidth",
@@ -751,6 +821,11 @@
     {
       "field": "sizeSystem",
       "header": "Size System",
+      "subfieldPath": []
+    },
+    {
+      "field": "targetGender",
+      "header": "Gender ",
       "subfieldPath": []
     },
     {
@@ -881,6 +956,18 @@
       "subfieldPath": []
     },
     {
+      "field": "installmentPlan",
+      "header": "Installment Plan (Value)",
+      "subfieldPath": [
+        {
+          "name": "price"
+        },
+        {
+          "name": "value"
+        }
+      ]
+    },
+    {
       "field": "expirationDate",
       "header": "Expiration Date",
       "subfieldPath": []
@@ -990,6 +1077,11 @@
       ]
     },
     {
+      "field": "targetAgeGroup",
+      "header": "Age Group",
+      "subfieldPath": []
+    },
+    {
       "field": "gmc_overrideTax",
       "header": "Tax Google Location ID",
       "subfieldPath": [
@@ -1027,6 +1119,11 @@
       "subfieldPath": []
     },
     {
+      "field": "pattern",
+      "header": "Pattern",
+      "subfieldPath": []
+    },
+    {
       "field": "energyEfficiencyClass",
       "header": "Energy Efficiency Class",
       "subfieldPath": []
@@ -1058,6 +1155,11 @@
           "name": "unit"
         }
       ]
+    },
+    {
+      "field": "material",
+      "header": "Material",
+      "subfieldPath": []
     },
     {
       "field": "gmc_displayAds",
@@ -1143,6 +1245,15 @@
       "subfieldPath": []
     },
     {
+      "field": "installmentPlan",
+      "header": "Installment Plan (Period Length)",
+      "subfieldPath": [
+        {
+          "name": "period"
+        }
+      ]
+    },
+    {
       "field": "sku",
       "header": "Offer ID",
       "subfieldPath": []
@@ -1179,26 +1290,6 @@
           "name": "currencyCode"
         }
       ]
-    },
-    {
-      "field": "targetAgeGroup",
-      "header": "Age Group",
-      "subfieldPath": []
-    },
-    {
-      "field": "targetGender",
-      "header": "Gender ",
-      "subfieldPath": []
-    },
-    {
-      "field": "material",
-      "header": "Material",
-      "subfieldPath": []
-    },
-    {
-      "field": "pattern",
-      "header": "Pattern",
-      "subfieldPath": []
     }
   ]
 }
